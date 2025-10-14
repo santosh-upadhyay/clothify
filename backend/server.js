@@ -51,8 +51,9 @@ const corsConfig = {
     credential:true,
     methods:["GET","POST","PUT","DELETE"],
 }
-app.options("",cors(corsConfig))
-app.use(cors(corsConfig));
+// app.options("",cors(corsConfig))
+// app.use(cors(corsConfig));
+app.use(cors());
 // api endpoint
 // import userRouter from "./routes/userRoute.js";
 // import productRouter from "./routes/productRoute.js";
