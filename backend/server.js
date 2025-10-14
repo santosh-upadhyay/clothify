@@ -52,7 +52,7 @@ const corsConfig = {
     // note: the option name expected by the cors middleware is 'credentials'
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization", "token"],
+    // allowedHeaders: ["Content-Type", "Authorization", "token"],
 }
 
 // Handle preflight requests for all routes with the configured CORS options.
