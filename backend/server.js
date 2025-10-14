@@ -47,18 +47,18 @@ app.use(express.urlencoded({extended:true}));
 // whatever req we get pass using json
 
 const corsConfig = {
-    origin:"*",
-    credential:true,
-    methods:["GET","POST","PUT","DELETE"],
+    // In development you can use '*' or localhost. In production, set this to your frontend origin(s).
+    origin: process.env.CORS_ORIGIN || '*',
+    // note: the option name expected by the cors middleware is 'credentials'
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization", "token"],
 }
-// app.options("",cors(corsConfig))
-// app.use(cors(corsConfig));
-app.use(cors());
-// api endpoint
-// import userRouter from "./routes/userRoute.js";
-// import productRouter from "./routes/productRoute.js";
-// import cartRouter from "./routes/cartRoute.js";
-// import orderRouter from "./routes/orderRoute.js";
+
+// Handle preflight requests for all routes with the configured CORS options.
+app.options('*', cors(corsConfig))
+app.use(cors(corsConfig));
+
 app.use('/api/user',userRouter)
 app.use('/api/product',productRouter)
 app.use('/api/cart', cartRouter)
