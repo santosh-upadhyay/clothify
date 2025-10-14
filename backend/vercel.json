@@ -13,9 +13,14 @@
     ],
     "routes": [
         {
+            "src": "/api/(.*)",
+            "dest": "server.js",
+            "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
+        },
+        {
             "src": "/(.*)",
             "dest": "server.js",
-            "methods":["GET","POST","PUT","DELETE"]
+            "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
         }
     ]
     ,"env": {

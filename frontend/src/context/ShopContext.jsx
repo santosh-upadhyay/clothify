@@ -9,7 +9,8 @@ const ShopContextProvider = (props) => {
     // let pro = products;
     const currency = '$';
     const delivery_fee = 10;
-    const backendUrl = import.meta.env.VITE_BACKEND_URL
+    // Normalize backend URL (remove trailing slash if present)
+    const backendUrl = (import.meta.env.VITE_BACKEND_URL || '').replace(/\/$/, '')
     const [search, setSearch] = useState('')
     const [showSearch, setShowSearch] = useState(false)
     const [cartItems, setCartItems] = useState({})
