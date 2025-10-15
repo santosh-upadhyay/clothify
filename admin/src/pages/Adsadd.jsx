@@ -4,7 +4,7 @@ import axios from 'axios'
 import { backendUrl } from '../App.jsx';
 
 function Adsadd({ token }) {
-    const [image1, setImage1] = useState(false)
+    const [image1, setImage1] = useState("")
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
     const [category, setCategory] = useState("After_Nav")

@@ -55,15 +55,15 @@ const showAds = async (req, res) => {
 
 const removeAd = async (req, res) => {
     try {
-        const { adId } = req.body;
-        if (!adId) {
+        const { id } = req.body;
+        if (!id) {
             return res.status(400).json({ success: false, message: "Ad ID is required" });
         }
-        const ad = await adsModel.findById(adId);
+        const ad = await adsModel.findById(id);
         if (!ad) {
             return res.status(404).json({ success: false, message: "Ad not found" });
         }
-        await adsModel.findByIdAndDelete(adId);
+        await adsModel.findByIdAndDelete(id);
         res.status(200).json({ success: true, message: "Ad removed successfully" });
     } catch (error) {
         console.error('removeAd error:', error);

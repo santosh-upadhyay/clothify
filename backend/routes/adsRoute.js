@@ -8,7 +8,7 @@ adsRouter.post('/create',
     upload.fields([
         {name: "image1", maxCount: 1}
     ]),createAd)
-adsRouter.get('/list',adminAuth,showAds);
+adsRouter.get('/list',showAds);
 adsRouter.post('/remove',adminAuth,removeAd);
 
 export default adsRouter; 

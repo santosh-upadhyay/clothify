@@ -9,6 +9,7 @@ import Login from './components/Login';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import Adsadd from './pages/Adsadd';
+import Adlist from './pages/Adlist';
 
 export const backendUrl = import.meta.env.VITE_BACKEND_URL
 export const currency = '$'
@@ -36,6 +37,7 @@ const App = () => {
                 <Route path='/list' element={<List token={token} />} />
                 <Route path='/orders' element={<Order token={token} />} />
                 <Route path='/ads' element={<Adsadd token={token} />} />
+                <Route path='/list-ads' element={<Adlist token={token}/>} />
               </Routes>
             </div>
           </div>
